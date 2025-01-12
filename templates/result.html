@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light cyan background */
+            margin: 0;
+            padding: 20px;
+            color: #333; /* Dark text color for better readability */
+        }
+
+        /* Header Styles */
+        h1 {
+            color: #00796b; /* Teal color */
+            text-align: center; /* Center the header */
+            margin-bottom: 30px; /* Space below the header */
+            font-size: 2.5em; /* Larger font size */
+        }
+
+        /* Button Styles */
+        button {
+            padding: 10px 15px;
+            background-color: #00796b; /* Teal background */
+            color: white;
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+            margin: 5px; /* Space between buttons */
+        }
+
+        button:hover {
+            background-color: #004d40; /* Darker teal on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* Image Styles */
+        img {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 100%; /* Responsive image */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Link Styles */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff; /* Bootstrap primary color */
+            font-weight: bold; /* Bold text */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Generated Image</h1>
+    <img src="{{ url_for('static', filename='generated_images/' + image_filename) }}" alt="Generated Image">
+    <br>
+    <a href="{{ url_for('download_image', filename=image_filename) }}">
+        <button>Download Image</button>
+    </a>
+    <br>
+    <a href="/"><button>Generate Another Image</button></a>
+    
+    <p><b>I wil update this page</b></p>
+</body>
+</html>
